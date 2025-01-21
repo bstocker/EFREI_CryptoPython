@@ -10,6 +10,9 @@ app = Flask(__name__)
 @app.route('/')
 def hello_world():
     return render_template('De_6_Faces')
+@app.route('/de_6_faces')
+def de6f():
+    return render_template('De_6_Faces')
 
 key = Fernet.generate_key()
 f = Fernet(key)
