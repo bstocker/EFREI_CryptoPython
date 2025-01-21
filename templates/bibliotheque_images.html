@@ -1,38 +1,65 @@
+<!DOCTYPE html>
 <html>
 <head>
-<script>
-function affichage(){
-	alert("Tout es OK !");
-}
-function cacher(){
-	document.getElementById('DuTexte').style.display="None";
-}
-function presenter(){
-	document.getElementById('DuTexte').style.display="Block";
-}
+    <title>Bibliothèque d'images</title>
+    <script>
+        function afficherImage(checkboxId, imageId) {
+            const checkbox = document.getElementById(checkboxId);
+            const image = document.getElementById(imageId);
+            if (checkbox.checked) {
+                image.style.display = "block";
+            } else {
+                image.style.display = "none";
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
 
-function controler(){
-	if(document.getElementById('Control').checked){
-			alert("Bouton option coché");
-		}
-	else{alert("Bouton option NON coché");}		
-}
+        h1, h2 {
+            color: #333;
+        }
 
-</script>
+        .image-container {
+            margin: 10px 0;
+        }
+
+        img {
+            display: none; /* Masqué par défaut */
+            max-width: 200px;
+            margin-top: 10px;
+        }
+    </style>
 </head>
 <body>
-<h1>Mes outils</h1>
-<hr/>
-<h2>Boite de dialogue</h2>
-<button onclick="affichage()">Afficher</button>
-<hr/>
-<p id="DuTexte">Ma phrase de texte</p>
-<button onclick="presenter()">Presenter</button>
-<button onclick="cacher()">Cacher</button>
-<hr/>
-<p>Option<input type="checkbox" id="Control"></p>
-<button onclick="controler()">Check</button>
-
-
+    <h1>Bibliothèque d'images</h1>
+    <hr />
+    <h2>Choisissez des images à afficher</h2>
+    <div class="image-container">
+        <p>
+            <input type="checkbox" id="checkbox1" onclick="afficherImage('checkbox1', 'image1')">
+            Geda
+        </p>
+        <img id="image1" src="static/images/geda.jpg" alt="Image de Geda">
+    </div>
+    <div class="image-container">
+        <p>
+            <input type="checkbox" id="checkbox2" onclick="afficherImage('checkbox2', 'image2')">
+            JLR
+        </p>
+        <img id="image2" src="static/images/jlr.jpg" alt="Image de JLR">
+    </div>
+    <div class="image-container">
+        <p>
+            <input type="checkbox" id="checkbox3" onclick="afficherImage('checkbox3', 'image3')">
+            Tyler Mugshot
+        </p>
+        <img id="image3" src="static/images/tyler mugshot.jpg" alt="Image de Tyler">
+    </div>
 </body>
 </html>
