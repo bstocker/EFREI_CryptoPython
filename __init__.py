@@ -19,7 +19,7 @@ def de6f():
 def bbtimg():
     return render_template('bibliotheque_images.html')
 
-@app.route('/roulette_russe.html')
+@app.route('/roulette_russe')
 def rrusse():
     return render_template('rouletterusse.html')
 
