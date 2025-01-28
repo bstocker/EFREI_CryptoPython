@@ -19,6 +19,10 @@ def de6f():
 def bbtimg():
     return render_template('bibliotheque_images.html')
 
+@app.route('/roulette_russe.html')
+def rrusse():
+    return render_template('rouletterusse.html')
+
 key = Fernet.generate_key()
 f = Fernet(key)
 
