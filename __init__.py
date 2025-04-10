@@ -9,7 +9,19 @@ app = Flask(__name__)
                                                                                                                                        
 @app.route('/')
 def hello_world():
-    return render_template('hello.html')
+    return render_template('')
+  
+@app.route('/de_6_faces.html')
+def de6f():
+    return render_template('De_6_Faces.html')
+  
+@app.route('/bibliotheque_images.html')
+def bbtimg():
+    return render_template('bibliotheque_images.html')
+
+@app.route('/roulette_russe')
+def rrusse():
+    return render_template('rouletterusse.html')
 
 key = Fernet.generate_key()
 f = Fernet(key)
